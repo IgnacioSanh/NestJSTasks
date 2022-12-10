@@ -41,7 +41,6 @@ export class TasksService {
   }
 
   async updateTaskStatus(id: string, status: TaskStatus): Promise<Task> {
-    console.log(`PATCHING TASK ID ${id}`);
     const task = await this.getTaskById(id);
     task.status = status;
     await this.tasksRepository.save(task);
